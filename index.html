@@ -5,34 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI summarize</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
 </head>
 <body class="bg-gray-100 font-sans">
     <header class="h-[4vw] bg-gradient-to-r from-cyan-500 to-purple-600 text-[2vw] flex items-center p-[10px] font-semibold">
         <h1 class="text-white">AI Summarizer eaaa</h1>
       </header>
-      <main class="w-[50vw] p-[10px] mx-auto">
+
+      <main class="w-[80vw] p-[10px] mx-auto">
         <p class="mb-[5px] text-[15px] font-semibold">Masukkan teks untuk diringkas:</p>
-        <div class="flex flex-row">
+        <div class="flex flex-col md:flex-row md:gap-[5vw] xl:gap-[8vw]">
             <textarea
+            id="inputText"
             rows="5"
-            cols="50"
+            cols="80"
             title="Input text area"
             placeholder="Masukkan teks di sini"
             class="p-[5px] rounded-xl shadow-lg"
             ></textarea>
         <div class="flex flex-col p-[10px] my-[5px] gap-[10px]">
-            <button class="bg-cyan-400 px-[15px] rounded-md hover:bg-cyan-500 transition duration-300">Ringkas</button>
-            <button class="bg-cyan-400 px-[15px] rounded-md hover:bg-red-500 transition duration-300">Reset</button>
+            <button 
+            id="ringkas"
+            class="bg-cyan-400 px-[15px] rounded-md hover:bg-cyan-500 transition duration-300 xl:px-[8vw]"
+            onclick="ringkas()">Ringkas</button>
+            <button 
+            id="reset"
+            class="bg-cyan-400 px-[15px] rounded-md hover:bg-red-500 transition duration-300 xl:px-[8vw]"
+            onclick="reset()">Reset</button>
         </div></div>
       </main>
-      <section class="w-[50vw] p-[10px] mx-auto mt-[2vw]">
+
+      <section class="w-[80vw] p-[10px] mx-auto mt-[2vw]">
         <h2 class="text-[20px] font-bold">Hasil Ringkasan</h2>
-        <p class="bg-white p-[10px] rounded-xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, incidunt. Consequuntur ducimus quae tempora, quia quas ab velit sint, autem quos alias doloribus nam fuga! Natus animi saepe aut recusandae!</p>
+        <p 
+        id="hasilRingkasan"
+        class="bg-white p-[3vw] rounded-xl"></p>
       </section>
-      <section class="w-[50vw] px-[10px] mx-auto">
+
+      <section class="w-[80vw] px-[10px] mx-auto">
         <h2 class="text-[20px] font-bold">History</h2>
         <ul class="bg-white p-[10px] rounded-md">
-            <li>Ringkasan 1</li>
+            <li id="riwayat">Ringkasan 1</li>
             <li>Ringkasan 2</li>
             <li>Ringkasan 3</li>
         </ul>
